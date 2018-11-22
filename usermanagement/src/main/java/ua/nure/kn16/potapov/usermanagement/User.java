@@ -7,44 +7,44 @@ import java.util.Objects;
 
 public class User implements Serializable {
     private Long id;
-    private String Name;
-    private String Surname;
-    private Date YearBirth;
+    private String firstName;
+    private String lastName;
+    private Date birthDate;
 
     public User() {
         super();
     }
 
-    public User(Long id, String Name, String Surname, Date YearBirth) {
+    public User(Long id, String firstName, String lastName, Date birthDate) {
         super();
         this.id = id;
-        this.Name = Name;
-        this.Surname = Surname;
-        this.YearBirth = YearBirth;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
     }
 
-    public Date getYearBirth() {
-        return YearBirth;
+    public Date getBirthDate() {
+        return birthDate;
     }
 
-    public void setYearBirth(Date YearBirth) {
-        this.YearBirth = YearBirth;
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public String getSurname() {
-        return Surname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurname(String Surname) {
-        this.Surname = Surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getName() {
-        return Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Long getId() {
@@ -61,19 +61,19 @@ public class User implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(id, user.id) &&
-                Objects.equals(Name, user.Name) &&
-                Objects.equals(Surname, user.Surname) &&
-                Objects.equals(YearBirth, user.YearBirth);
+                Objects.equals(firstName, user.firstName) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(birthDate, user.birthDate);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, Name, Surname, YearBirth);
+        return Objects.hash(id, firstName, lastName, birthDate);
     }
 
-    public String FullName() {
-        return (new StringBuilder(getName()).append(", ").append(getSurname())).toString();
+    public String getFullName() {
+        return (new StringBuilder(getFirstName()).append(", ").append(getLastName())).toString();
     }
 
     public int getAge() {
@@ -82,7 +82,7 @@ public class User implements Serializable {
         int currentMonth = calendar.get(Calendar.MONTH);
         int currentDate = calendar.get(Calendar.DATE);
 
-        calendar.setTime(YearBirth);
+        calendar.setTime(birthDate);
         final int birthYear = calendar.get(Calendar.YEAR);
         final int birthMonth = calendar.get(Calendar.MONTH);
         final int birthDate = calendar.get(Calendar.DATE);
