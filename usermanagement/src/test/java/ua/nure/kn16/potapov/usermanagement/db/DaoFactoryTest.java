@@ -1,4 +1,4 @@
-package ua.nure.kn16.oleynik.usermanagement.db;
+package ua.nure.kn16.potapov.usermanagement.db;
 
 import junit.framework.TestCase;
 
